@@ -44,6 +44,8 @@ public class LoginTests {
         driver.findElement(By.xpath("//*[@id=\"app-main-content\"]/section/div[1]/div[1]/h2/span[1]")).isDisplayed();
     }
 
+    //testing a pull request on line 47
+
     @AfterTest
     public void tearDown() {
         if (driver != null) {
