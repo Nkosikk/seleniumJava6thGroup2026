@@ -13,7 +13,10 @@ public class NdosiLoginTest extends Base {
         loginpage.enterUsername("admin@gmail.com");
         loginpage.enterPassword("@12345678");
         loginpage.clickLoginButton();
-
+        dashboardpage.verifyLoginWasSuccessful();
+        dashboardpage.clickMenu();
+        dashboardpage.clickLogout();
+        dashboardpage.closeAlertWindow();
     }
 
 }
