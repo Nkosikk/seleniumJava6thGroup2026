@@ -10,6 +10,10 @@ public class NdosiLoginTest extends Base {
     public void loginTest(){
         homepage.checkIfNdosiWebsiteIsLoaded();
         homepage.clickHomeLoginButton();
+        loginpage.enterUsername("admin@gmail.com");
+        loginpage.enterPassword("@12345678");
+        loginpage.clickLoginButton();
 
     }
+
 }
