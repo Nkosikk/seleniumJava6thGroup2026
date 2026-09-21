@@ -22,7 +22,7 @@ public class ExtentReportManager {
         extentSparkReporter.config().setTheme(Theme.DARK);
         extentSparkReporter.config().setReportName("Ndosi Test Automation Report");
 
-        extentReports.setSystemInfo("OS", System.getProperty("os.name"));
+        extentReports.setSystemInfo("Windows", System.getProperty("os.name"));
         extentReports.setSystemInfo("Execution Machine", System.getProperty("user.name"));
 
         return  extentReports;
