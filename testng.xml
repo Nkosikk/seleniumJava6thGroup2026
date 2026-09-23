@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org">
+<suite name="My Test Suite">
+
+    <!-- Register your listener here with its fully qualified package and class name -->
+    <listeners>
+        <listener class-name="<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE suite SYSTEM "https://testng.org">
+        <suite name="My Test Suite">
+
+            <!-- Register your listener here with its fully qualified package and class name -->
+            <listeners>
+                <listener class-name="com.myproject.listeners.MyTestListener"/>
+            </listeners>
+
+            <test name="Regression Tests">
+                <classes>
+                    <class name="com.myproject.tests.LoginTest"/>
+                    <class name="com.myproject.tests.HomeTest"/>
+                </classes>
+            </test>
+
+        </suite>
+        .MyTestListener"/>
+    </listeners>
+
+    <test name="Ndosi test">
+        <classes>
+            <class name="com.myproject.tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
