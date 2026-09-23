@@ -6,8 +6,7 @@
     </listeners>
     <test name="Ndosi Tests">
         <classes>
-            <class name="tests.BrowserLoginTest"></class>
-<!--            <class name="tests.NdosiLoginTest"></class>-->
+            <class name="tests.NdosiLoginTest"></class>
         </classes>
     </test>
 
