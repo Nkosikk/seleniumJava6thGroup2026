@@ -7,10 +7,8 @@ import pages.LoginPage;
 
 public class Base {
 
-    static WebDriver driver = BrowserFactory.startBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app");
+    public static final WebDriver driver = BrowserFactory.startBrowser("chrome","https://ndosisimplifiedautomation.vercel.app");
     public HomePage homepage = new HomePage(driver);
     public LoginPage loginpage = new LoginPage(driver);
     public DashboardPage dashboardpage = new DashboardPage(driver);
-
-
 }
