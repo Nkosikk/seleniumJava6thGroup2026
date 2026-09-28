@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,14 +16,22 @@ public class BrowserFactory {
 
     public static WebDriver startBrowser(String browserChoice, String url){
 
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
         if (browserChoice.equalsIgnoreCase("chrome")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
+            if (isHeadless) {
+                options.addArguments("--headless=new");
+            }
             driver = new ChromeDriver(options);
 
         } else if (browserChoice.equalsIgnoreCase("firefox")){
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("-private");
+            if (isHeadless) {
+                options.addArguments("-headless");
+            }
             driver = new FirefoxDriver(options);
 
         } else if (browserChoice.equalsIgnoreCase("safari")){
@@ -32,7 +41,8 @@ public class BrowserFactory {
         }
 
         driver.get(url);
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1920,1080));
+        //driver.manage().window().maximize();
 
         return driver;
     }
