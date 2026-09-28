@@ -3,9 +3,17 @@ package extentReport;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.ITestContext;
+import utils.TakeScreenshots;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.sql.Driver;
+
+import static utils.Base.driver;
 
 public class Listener implements ITestListener {
 
@@ -20,6 +28,16 @@ public class Listener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         extentTest.log(Status.FAIL, "Test Case: " + result.getMethod().getMethodName() + " Has failed");
+        extentTest.log(Status.FAIL, result.getThrowable().getMessage() );
+
+        try {
+            String screenshotName = result.getMethod().getMethodName() + ".png";
+            TakeScreenshots.takeSnapShot(driver, result.getMethod().getMethodName());
+            extentTest.addScreenCaptureFromPath(Paths.get("Screenshots", screenshotName).toString().replace("\\", "/"), result.getMethod().getMethodName());
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to take screenshot for test case: " + result.getMethod().getMethodName(), e);
+
+        }
     }
 
     @Override
