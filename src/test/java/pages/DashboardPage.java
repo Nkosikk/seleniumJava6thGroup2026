@@ -32,6 +32,7 @@ public class DashboardPage {
     }
 
     public void clickLogout(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(logout_xpath));
         driver.findElement(logout_xpath).click();
     }
 
