@@ -27,6 +27,8 @@ public class LoginTests {
     @Test(dependsOnMethods = "clickLoginButtonTests")
     public void enterUsernameTests(){
         driver.findElement(By.id("login-email")).sendKeys("njceles@gmail.com");
+        driver.close();
+        driver.quit();
     }
 
     @Test(dependsOnMethods = "enterUsernameTests")
