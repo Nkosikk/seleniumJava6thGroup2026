@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}           # Gmail app-specific password
           # Email content
           subject: Selenium Automation Test Results - Report for CI/CD Group  # Email subject line
-          to: fitness.seed@gmail.com                        # Recipient email address
+          to: test@ndosiautomation.com                        # Recipient email address
           from: ${{ secrets.EMAIL_USERNAME }}               # Sender email address
           # Message body with test execution details and formatting
           body: |
